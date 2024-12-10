@@ -2,11 +2,13 @@
 # hw definition file for processing by chibios_hwdef.py
 # template from kakutef4-wing
 
+define AP_BOOTLOADER_FLASHING_ENABLED 0
+
 # MCU class and specific type
 MCU STM32F4xx STM32F405xx
 
 # board ID for firmware load
-APJ_BOARD_ID AP_HW_Holybro-KakuteF4-Wing
+#APJ_BOARD_ID AP_HW_Holybro-KakuteF4-Wing
 
 # crystal frequency, setup to use external oscillator
 OSCILLATOR_HZ 8000000
@@ -102,9 +104,9 @@ define HAL_BATT_MONITOR_DEFAULT 4
 
 # MOTORS (PWM)
 PA8 TIM1_CH1 TIM1 PWM(1) GPIO(50)           # M1
-PA9 TIM1_CH2 TIM1 PWM(2) GPIO(51) BIDIR     # M2
+PA9 TIM1_CH2 TIM1 PWM(2) GPIO(51)           # M2
 PB0 TIM3_CH3 TIM3 PWM(3) GPIO(52)           # M3
-PB1 TIM3_CH4 TIM3 PWM(4) GPIO(53) BIDIR     # M4
+PB1 TIM3_CH4 TIM3 PWM(4) GPIO(53)           # M4
 PC8 TIM8_CH3 TIM8 PWM(5) GPIO(54)           # M5
 PC9 TIM8_CH4 TIM8 PWM(6) GPIO(55)           # M6
 
@@ -132,5 +134,3 @@ define HAL_I2C_INTERNAL_MASK 0
 define HAL_COMPASS_AUTO_ROT_DEFAULT 2
 define HAL_DEFAULT_INS_FAST_SAMPLE 1
 define HAL_FRAME_TYPE_DEFAULT 12
-
-define AP_BOOTLOADER_FLASHING_ENABLED 0
